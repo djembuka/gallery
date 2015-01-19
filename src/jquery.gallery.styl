@@ -1,0 +1,75 @@
+//mixins
+ib()
+  display inline-block
+  vertical-align top
+
+after()
+  &:after
+    clear both
+    content "."
+    display block
+    height 0
+    visibility hidden
+
+transition( val )
+  transition val
+  -webkit-transition val
+  -moz-transition val
+  -ms-transition val
+  
+transform( val )
+  transform val
+  -webkit-transform val
+  -moz-transform val
+  -ms-transform val
+  
+opacity( val )
+  opacity val
+  -webkit-opacity val
+  -moz-opacity val
+
+border-radius( val )
+  -webkit-border-radius val
+  -moz-border-radius val
+  border-radius val
+
+//styles
+.b-gallery
+  
+  &__i
+    float left
+    
+    img
+      width 100%
+      ib()
+      
+    &.i-scale {
+      transition( all 0.5s ease )
+      transform( scale( 0.5 ) )
+      opacity( 0.5 )
+    }
+  
+  &__images
+    overflow hidden
+    margin-bottom 25px
+  
+  &__belt
+    transition( margin 0.5s ease )
+    after()
+    
+  &__nav
+    text-align center
+    margin 0
+    padding 0
+    
+    &__i
+      ib()
+      width 10px
+      height 10px
+      border-radius( 5px )
+      background-color #262626
+      margin 0 5px
+      transition( background-color 0.3s ease )
+      
+      &.i-active
+        background-color #98c810
